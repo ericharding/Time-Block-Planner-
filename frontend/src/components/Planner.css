@@ -1,0 +1,105 @@
+.planner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.planner-header {
+  margin-bottom: 20px;
+}
+
+.planner-header h1 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.controls input[type='date'],
+.controls input[type='time'] {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.interruption-btn {
+  padding: 8px 16px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.interruption-btn:hover {
+  background: #ff5252;
+}
+
+.error {
+  padding: 12px;
+  background: #fee;
+  color: #c00;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.loading {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.planner-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.planner-container.single-column {
+  justify-content: flex-start;
+}
+
+.planner-container.single-column .planner-column {
+  max-width: 600px;
+  flex: 0 0 auto;
+}
+
+.planner-column {
+  flex: 1;
+  min-width: 400px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.column-header {
+  background: #4a90e2;
+  color: white;
+  padding: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.column-header.interrupted {
+  background: #ff6b6b;
+}
