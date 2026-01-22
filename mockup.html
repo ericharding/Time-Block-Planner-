@@ -76,6 +76,15 @@
             overflow-x: auto;
         }
 
+        .planner-container.single-column {
+            justify-content: flex-start;
+        }
+
+        .planner-container.single-column .planner-column {
+            max-width: 600px;
+            flex: 0 0 auto;
+        }
+
         .planner-column {
             flex: 1;
             min-width: 400px;
@@ -257,9 +266,9 @@
             <button>⚡ Mark Interruption</button>
         </div>
 
-        <div class="scenario-title">Scenario 1: Normal Planning View</div>
+        <div class="scenario-title">Scenario 1: Normal Planning View (Single Column, Max 600px)</div>
 
-        <div class="planner-container">
+        <div class="planner-container single-column">
             <div class="planner-column">
                 <div class="column-header">Today's Plan</div>
                 <div class="timeline-container">
@@ -358,7 +367,7 @@
             </div>
         </div>
 
-        <div class="scenario-title">Scenario 2: After Interruption (Two Columns)</div>
+        <div class="scenario-title">Scenario 2: After Interruption at 10:15 AM (Times Aligned)</div>
 
         <div class="planner-container">
             <!-- Original Plan Column -->
@@ -411,38 +420,38 @@
                             <div class="block-time">8:00 - 8:30 AM</div>
                         </div>
 
-                        <div class="time-block" style="top: 30px; height: 120px; opacity: 0.5;">
+                        <div class="time-block" style="top: 30px; height: 105px; opacity: 0.5;">
                             <div class="block-title">Deep Work ✓</div>
-                            <div class="block-time">8:30 - 10:30 AM</div>
+                            <div class="block-time">8:30 - 10:15 AM</div>
                         </div>
 
-                        <!-- Remaining tasks at normal opacity -->
-                        <div class="time-block orange" style="top: 150px; height: 15px;">
-                            <div class="block-title">Break</div>
+                        <!-- Remaining tasks at normal opacity (not completed) -->
+                        <div class="time-block orange" style="top: 150px; height: 15px; opacity: 0.3;">
+                            <div class="block-title">Break (skipped)</div>
                             <div class="block-time">10:30 - 10:45 AM</div>
                         </div>
 
-                        <div class="time-block purple" style="top: 165px; height: 60px;">
+                        <div class="time-block purple" style="top: 165px; height: 60px; opacity: 0.3;">
                             <div class="block-title">Code Review</div>
                             <div class="block-time">10:45 - 11:45 AM</div>
                         </div>
 
-                        <div class="time-block orange" style="top: 240px; height: 60px;">
+                        <div class="time-block orange" style="top: 240px; height: 60px; opacity: 0.3;">
                             <div class="block-title">Lunch</div>
                             <div class="block-time">12:00 - 1:00 PM</div>
                         </div>
 
-                        <div class="time-block green" style="top: 300px; height: 90px;">
+                        <div class="time-block green" style="top: 300px; height: 90px; opacity: 0.3;">
                             <div class="block-title">Team Meetings</div>
                             <div class="block-time">1:00 - 2:30 PM</div>
                         </div>
 
-                        <div class="time-block" style="top: 390px; height: 90px;">
+                        <div class="time-block" style="top: 390px; height: 90px; opacity: 0.3;">
                             <div class="block-title">Documentation</div>
                             <div class="block-time">2:30 - 4:00 PM</div>
                         </div>
 
-                        <div class="time-block purple" style="top: 480px; height: 60px;">
+                        <div class="time-block purple" style="top: 480px; height: 60px; opacity: 0.3;">
                             <div class="block-title">Wrap Up</div>
                             <div class="block-time">4:00 - 5:00 PM</div>
                         </div>
@@ -450,76 +459,301 @@
                 </div>
             </div>
 
-            <!-- Revised Plan Column (starts at interruption time) -->
+            <!-- Revised Plan Column (same time range, aligned) -->
             <div class="planner-column">
-                <div class="column-header interrupted">Revised Plan (from 10:30 AM)</div>
+                <div class="column-header interrupted">Revised Plan (from 10:15 AM)</div>
                 <div class="timeline-container">
                     <div class="time-labels">
-                        <div class="time-slot">10:30 AM</div>
+                        <div class="time-slot">8:00 AM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">11:30 AM</div>
+                        <div class="time-slot">9:00 AM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">12:30 PM</div>
+                        <div class="time-slot">10:00 AM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">1:30 PM</div>
+                        <div class="time-slot">11:00 AM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">2:30 PM</div>
+                        <div class="time-slot">12:00 PM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">3:30 PM</div>
+                        <div class="time-slot">1:00 PM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">4:30 PM</div>
+                        <div class="time-slot">2:00 PM</div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
                         <div class="time-slot quarter"></div>
-                        <div class="time-slot">5:30 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">5:00 PM</div>
                     </div>
                     <div class="blocks-area">
-                        <!-- Urgent Bug Fix (the interruption) -->
-                        <div class="time-block" style="top: 0px; height: 45px; background: #e53935; border-left-color: #c62828;">
+                        <!-- Interruption starts at 10:15 AM (135 minutes from 8 AM = 135px) -->
+                        <div class="time-block" style="top: 135px; height: 30px; background: #e53935; border-left-color: #c62828;">
                             <div class="block-title">🔥 Urgent Bug Fix</div>
-                            <div class="block-time">10:30 - 11:15 AM (45 min)</div>
+                            <div class="block-time">10:15 - 10:45 AM</div>
                         </div>
 
                         <!-- Rescheduled Code Review -->
-                        <div class="time-block purple" style="top: 45px; height: 45px;">
+                        <div class="time-block purple" style="top: 165px; height: 75px;">
                             <div class="block-title">Code Review (shortened)</div>
-                            <div class="block-time">11:15 AM - 12:00 PM</div>
+                            <div class="block-time">10:45 AM - 12:00 PM</div>
                         </div>
 
-                        <!-- Lunch (moved) -->
-                        <div class="time-block orange" style="top: 90px; height: 60px;">
+                        <!-- Lunch -->
+                        <div class="time-block orange" style="top: 240px; height: 60px;">
                             <div class="block-title">Lunch</div>
                             <div class="block-time">12:00 - 1:00 PM</div>
                         </div>
 
                         <!-- Team Meetings -->
-                        <div class="time-block green" style="top: 150px; height: 90px;">
+                        <div class="time-block green" style="top: 300px; height: 90px;">
                             <div class="block-title">Team Meetings</div>
                             <div class="block-time">1:00 - 2:30 PM</div>
                         </div>
 
                         <!-- Documentation (shortened) -->
-                        <div class="time-block" style="top: 240px; height: 60px;">
-                            <div class="block-title">Documentation (shortened)</div>
+                        <div class="time-block" style="top: 390px; height: 60px;">
+                            <div class="block-title">Documentation (cut short)</div>
                             <div class="block-time">2:30 - 3:30 PM</div>
                         </div>
 
                         <!-- Wrap Up -->
-                        <div class="time-block purple" style="top: 300px; height: 60px;">
+                        <div class="time-block purple" style="top: 450px; height: 60px;">
                             <div class="block-title">Wrap Up</div>
                             <div class="block-time">3:30 - 4:30 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scenario-title">Scenario 3: Multiple Interruptions (3 Columns, All Aligned)</div>
+
+        <div class="planner-container">
+            <!-- Original Plan Column -->
+            <div class="planner-column">
+                <div class="column-header">Original Plan</div>
+                <div class="timeline-container">
+                    <div class="time-labels">
+                        <div class="time-slot">8:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">5:00 PM</div>
+                    </div>
+                    <div class="blocks-area">
+                        <div class="time-block green" style="top: 0px; height: 30px; opacity: 0.5;">
+                            <div class="block-title">Standup ✓</div>
+                            <div class="block-time">8:00 - 8:30 AM</div>
+                        </div>
+
+                        <div class="time-block" style="top: 30px; height: 120px; opacity: 0.3;">
+                            <div class="block-title">Deep Work</div>
+                            <div class="block-time">8:30 - 10:30 AM</div>
+                        </div>
+
+                        <div class="time-block purple" style="top: 165px; height: 60px; opacity: 0.3;">
+                            <div class="block-title">Code Review</div>
+                            <div class="block-time">10:45 - 11:45 AM</div>
+                        </div>
+
+                        <div class="time-block orange" style="top: 240px; height: 60px; opacity: 0.3;">
+                            <div class="block-title">Lunch</div>
+                            <div class="block-time">12:00 - 1:00 PM</div>
+                        </div>
+
+                        <div class="time-block green" style="top: 300px; height: 90px; opacity: 0.3;">
+                            <div class="block-title">Meetings</div>
+                            <div class="block-time">1:00 - 2:30 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Interruption at 8:45 AM -->
+            <div class="planner-column">
+                <div class="column-header interrupted">Revision 1 (8:45 AM)</div>
+                <div class="timeline-container">
+                    <div class="time-labels">
+                        <div class="time-slot">8:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">5:00 PM</div>
+                    </div>
+                    <div class="blocks-area">
+                        <!-- First interruption at 8:45 (45 minutes = 45px) -->
+                        <div class="time-block" style="top: 45px; height: 45px; background: #e53935; border-left-color: #c62828;">
+                            <div class="block-title">🔥 Client Call</div>
+                            <div class="block-time">8:45 - 9:30 AM</div>
+                        </div>
+
+                        <div class="time-block" style="top: 90px; height: 60px; opacity: 0.5;">
+                            <div class="block-title">Deep Work ✓</div>
+                            <div class="block-time">9:30 - 10:30 AM</div>
+                        </div>
+
+                        <div class="time-block purple" style="top: 165px; height: 60px; opacity: 0.3;">
+                            <div class="block-title">Code Review</div>
+                            <div class="block-time">10:45 - 11:45 AM</div>
+                        </div>
+
+                        <div class="time-block orange" style="top: 240px; height: 60px; opacity: 0.3;">
+                            <div class="block-title">Lunch</div>
+                            <div class="block-time">12:00 - 1:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Interruption at 10:30 AM -->
+            <div class="planner-column">
+                <div class="column-header interrupted">Revision 2 (10:30 AM)</div>
+                <div class="timeline-container">
+                    <div class="time-labels">
+                        <div class="time-slot">8:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">4:00 PM</div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot quarter"></div>
+                        <div class="time-slot">5:00 PM</div>
+                    </div>
+                    <div class="blocks-area">
+                        <!-- Second interruption at 10:30 (150 minutes = 150px) -->
+                        <div class="time-block" style="top: 150px; height: 60px; background: #e53935; border-left-color: #c62828;">
+                            <div class="block-title">🔥 Production Issue</div>
+                            <div class="block-time">10:30 - 11:30 AM</div>
+                        </div>
+
+                        <div class="time-block purple" style="top: 210px; height: 30px;">
+                            <div class="block-title">Quick Review</div>
+                            <div class="block-time">11:30 AM - 12:00 PM</div>
+                        </div>
+
+                        <div class="time-block orange" style="top: 240px; height: 60px;">
+                            <div class="block-title">Lunch</div>
+                            <div class="block-time">12:00 - 1:00 PM</div>
+                        </div>
+
+                        <div class="time-block green" style="top: 300px; height: 60px;">
+                            <div class="block-title">Critical Meeting Only</div>
+                            <div class="block-time">1:00 - 2:00 PM</div>
+                        </div>
+
+                        <div class="time-block" style="top: 360px; height: 120px;">
+                            <div class="block-title">Finish Up Work</div>
+                            <div class="block-time">2:00 - 4:00 PM</div>
                         </div>
                     </div>
                 </div>
